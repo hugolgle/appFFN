@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import './exercices/pushUp.dart';  // Importation de la page des pompes
+import 'pushUp.dart';  // Importation de la page des pompes
 
-class WelcomePage extends StatelessWidget {
+class ExercisesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Accueil')),  // Titre de l'écran d'accueil
+      appBar: AppBar(
+        title: Text("Exercices"),  // Titre de la page "Exercices"
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),  // Espacement autour de la grille
         child: GridView.count(
@@ -17,7 +19,7 @@ class WelcomePage extends StatelessWidget {
             ExerciseButton(
               exerciseName: "Pompes",  // Nom de l'exercice
               onPressed: () {
-                // Action à effectuer lorsqu'on appuie sur le bouton Pompes
+                // Action pour naviguer vers la page des Pompes
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PompesPage()),  // Navigation vers la page des Pompes
@@ -69,7 +71,7 @@ class ExerciseButton extends StatelessWidget {
         padding: EdgeInsets.all(20),  // Taille du bouton
       ),
       child: Text(
-        exerciseName,  // Texte affiché sur le bouton
+        exerciseName,  // Texte affiché sur le bouton (nom de l'exercice)
         style: TextStyle(
           fontSize: 18,  // Taille du texte
           fontWeight: FontWeight.bold,  // Gras pour le texte

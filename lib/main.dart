@@ -1,14 +1,17 @@
-import 'package:appffn/pages/signup_page.dart';
+import 'package:appffn/pages/screens/login_page.dart';
+import 'package:appffn/pages/screens/signup_page.dart';
 import 'package:flutter/material.dart';
-import 'pages/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'pages/exercices_page.dart';
+import 'pages/screens/exercices_page.dart';
+import 'firebase_options.dart';
 
 void main() async {
   // Assure que toutes les dépendances sont initialisées avant de lancer l'application
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();  // Initialisation de Firebase
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());  // Lancement de l'application
 }
 
